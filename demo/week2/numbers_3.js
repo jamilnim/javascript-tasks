@@ -12,9 +12,9 @@ NaN (if the addition involves invalid input).
 
 */
 
-let num1 = "10"
-let num2 = "jam 25 euro"
-let num3 = parseFloat(num1)
-let num4 = parseFloat(num2)
-total=num3+num4
+let num1 = "10";
+let num2 = "jam 25 euro";
+let num3 = parseFloat(num1);
+let num4 = parseFloat(num2);
+let total=num3+num4
 console.log(total)

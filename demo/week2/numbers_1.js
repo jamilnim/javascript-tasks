@@ -9,7 +9,17 @@ Print the results using console.log() with messages:
 "The floating-point number is 3.14."
 */
 
-let numString1 = 42
-let numString2 = 3.14
-console.log("The integer is", parseInt(numString1))
-console.log(parseFloat(numString2))
+let numString1 = "42";
+let numString2 = "3.14";
+
+let integer1 = parseInt(numString1);
+let integer2 = Number.parseInt(numString1);
+
+let float1=parseFloat(numString2);
+let float2=Number.parseFloat(numString2);
+
+console.log("The integer is", integer1);
+console.log("The integer is", integer2);
+
+console.log("The floating-point number is " + float1 +".");
+console.log("The floating-point number is ", float2+".");

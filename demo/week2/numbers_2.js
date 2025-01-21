@@ -7,8 +7,8 @@ Print both results using console.log() with messages:
 "Price with no decimals: 20"
  */
 
-let price=19.56789
-finalPrice= price.toFixed(2)
-console.log("Price with 2 decimals:",finalPrice)
-finalPrice2= price.toFixed(0)
-console.log("Price with no decimals:",finalPrice2)
+let price=19.56789;
+let priceTwoDecimals = price.toFixed(2);
+console.log("Price with 2 decimals:" + priceTwoDecimals);
+let priceNoDecimals = price.toFixed(0);
+console.log(`Price with no decimals: ${priceNoDecimals}`);
