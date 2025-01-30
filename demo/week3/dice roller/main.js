@@ -18,6 +18,7 @@ let rollDice = () => {
     totalRolls = totalRolls + randomNumber;
   }
   console.log(totalRolls);
+  alert(totalRolls)
 };
 
 rollDice();
