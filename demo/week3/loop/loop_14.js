@@ -14,8 +14,11 @@ let createWordPyramid = () => {
   let totalLetter = Math.floor(collectedWord.length);
   let count = 0;
 
-  for (count = 0; count <= totalLetter; count++) {
-    console.log(collectedWord.substring(0, count));
+    for (count = 0; count <= totalLetter; count++) {
+      console.log(collectedWord.substring(0, count));
+    }
+  for (count = totalLetter; (count >= 0); count--) {
+    console.log(collectedWord.substring(count, 0));
   }
 };
 createWordPyramid();

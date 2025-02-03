@@ -1,0 +1,15 @@
+body{
+    background-color: burlywood;
+}
+
+.circle{
+    height: 250px;
+    width: 250px;
+    background-color: aquamarine;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 28px;
+}
