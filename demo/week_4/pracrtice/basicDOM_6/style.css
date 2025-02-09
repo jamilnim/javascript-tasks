@@ -1,0 +1,21 @@
+* {
+  text-align: center;
+}
+
+.mainBox {
+  box-sizing: border-box;
+  background-color: bisque;
+  width: 35%;
+  height: 8cm;
+  border-radius: 10%;
+  padding-top: 20px;
+}
+
+div {
+  margin: 20px;
+}
+
+button {
+  width: 4cm;
+  margin-top: 2cm;
+}

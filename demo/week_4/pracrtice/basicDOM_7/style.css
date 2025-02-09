@@ -1,0 +1,40 @@
+p {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3cm;
+  fo
+  margin: 0;
+  padding-top: 0px;
+  padding-bottom: 30px;
+}
+
+.center {
+  box-sizing: border-box;
+  background-color: cadetblue;
+  width: 600px;
+  height: 16cm;
+  padding-top: 0cm;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.overAll {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.left {
+  box-sizing: border-box;
+  width: 33%;
+  display: flex;
+}
+
+.right {
+  box-sizing: border-box;
+  width: 33%;
+  display: flex;
+}
+
+button{
+    width: 3cm;
+    height: 1.5cm;
+}

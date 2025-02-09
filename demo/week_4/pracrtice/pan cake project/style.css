@@ -1,0 +1,101 @@
+* {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+.overAll {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.left {
+  box-sizing: border-box;
+  background-image: url(./image/pancake1.webp);
+
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  text-align: right;
+}
+
+.priceBox {
+  box-sizing: border-box;
+  background-color: greenyellow;
+  width: 3cm;
+  height: 3cm;
+  border-radius: 50%;
+  text-align: center;
+  padding: 5%;
+  margin-left: 15cm;
+  margin-top: 1cm;
+}
+
+#basePrice {
+  font-size: xx-large;
+}
+
+.right {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100vh;
+  /* display: flex; */
+  background-color: bisque;
+  padding-left: 20px;
+box-shadow: 20px rgb(98, 97, 97);
+}
+
+.cakeRadio {
+  box-sizing: border-box;
+  width: 20cm;
+  height: 1.5cm;
+  border: 5px;
+
+  font-size: larger;
+  text-align: center;
+}
+
+.radioBox {
+  box-sizing: border-box;
+  width: 20cm;
+  height: 1.5cm;
+  border: 5px;
+  border-color: chartreuse;
+  background-color: rgb(242, 238, 193);
+  margin-top: 2cm;
+
+  padding-top: 0cm;
+}
+
+h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#SugerType{
+    box-sizing: border-box;
+    width: 12cm;
+    height: 1.5cm;
+    text-align: center;
+    font-size: large;
+}
+
+.Addoptions
+{
+    text-align: center;
+}
+
+#cakeLayer{
+    box-sizing: border-box;
+    width: 12cm;
+    height: 1.5cm;
+    text-align: center;
+    font-size: large;
+}
+
+.Addoptions
+{
+    text-align: center;
+    margin-top: 5px;
+}

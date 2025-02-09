@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pan Cack</title>
+    <script lin></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="overAll">
+      <div class="left">
+        <div class="priceBox">
+          <p id="basePrice">0</p>
+          <span>€</span>
+        </div>
+      </div>
+      <div class="right">
+        <P><h1>Make your Pan cake</h1>
+            <h3>You can customize your pancake</h3></P>
+            <p>A pancake straight out of your dreams, where you decide the toppings! Experiment, mix, get creative, and discover the most delicious flavor combination just for you.
+
+               <h3> Try it now and explore</h3></p>
+        <div class="radioBox">
+          <form class="cakeRadio">
+            <input type="radio" id="cakeOption1" name="cakeOption" />
+            <label for="cakeOption1">Classic Buttermilk Pancake</label>
+            <input type="radio" id="cakeOption2" name="cakeOption" />
+            <label for="cakeOption2">Whole Wheat Pancake</label>
+            <input type="radio" id="cakeOption3" name="cakeOption" />
+            <label for="cakeOption3">Chocolate Pancake</label>
+          </form>
+        </div>
+        <!-- sugger selaction option -->
+        <div>
+            <form class="Addoptions">
+                <h3>Add more options</h2>
+                <select name="SugerType" id="SugerType">
+                    <option value="selactAOption">Select a suger option</option>
+                    <option value="granulatedSugar">Granulated Sugar +2€</option>
+                    <option value="brownSugar">Brown Sugar +1€</option>
+                    <option value="powderedSugar">Powdered Sugar +1€</option>
+                </select>
+                
+            </form>
+        </div>
+        <!-- cake layer selection opion -->
+        <div>
+            <form class="Addoptions">
+                <select name="cakeLyer" id="cakeLayer">
+                    <option value="selectadditionallayer">Add additional cake layers</option>
+                    <option value="addOnelayer">Add a Additional layer +1€</option>
+                    <option value="addTwolayer">Add 2 Additional layer +2€</option>
+                    <option value="addThreelayer">Add 3 Additional layer +2.5€</option>
+                    <option value="addFourlayer">Add 4 Additional layer +3€</option>
+                   
+                </select>
+                
+            </form>
+        </div>
+      </div>
+
+      <script src="main.js"></script>
+    </div>
+  </body>
+</html>

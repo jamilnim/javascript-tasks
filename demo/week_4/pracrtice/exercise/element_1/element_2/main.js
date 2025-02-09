@@ -8,10 +8,20 @@ Write JavaScript to:
 */
 
 function Retrieve() {
-  const input = document.getElementById("fruitInput").value;
+  const input = document.getElementById("fruitInput");
   let fruitList = document.getElementById("fruitList");
   let element = document.createElement("li");
-  element.innerText = input;
+  element.innerText = input.value;
   fruitList.appendChild(element);
-  alert(input);
+  input.value = "";
+}
+
+function addComments() {
+  const cmments = document.getElementById("comment").value;
+  customerInput.textContent = cmments;
+}
+
+function replace() {
+  const cmments = document.getElementById("comment").value;
+  customerInput.textContent = cmments;
 }
