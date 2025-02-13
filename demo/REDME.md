@@ -9,7 +9,12 @@
   - [x] numbers
   - [x] strings
   - [x] conditions
+  - [x]
 - **week_03:**
   - [x] github
-  - [ ] loops
-  - [ ] 8_ball
+  - [x] loops
+  - [x] 8_ball
+  - **week_04:**
+  - [x] DOM
+  - [x] ATM
+  - [x] pan cake

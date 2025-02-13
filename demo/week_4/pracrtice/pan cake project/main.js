@@ -1,53 +1,39 @@
-// coding for radio button
+// global veriable 
 
-const cakeOprion1 = document.getElementById("cakeOption1");
-const cakeOprion2 = document.getElementById("cakeOption2");
-const cakeOprion3 = document.getElementById("cakeOption3");
+const cakeOption1 = document.getElementById("cakeOption1");
+const cakeOption2 = document.getElementById("cakeOption2");
+const cakeOption3 = document.getElementById("cakeOption3");
 
-let basePrice = document.getElementById("basePrice");
+const sugerType = document.getElementById("sugerType");
 
-function panCakeOprion() {
-  if (cakeOprion1.checked) {
-    document.getElementById("basePrice").textContent = "15";
-  } else if (cakeOprion2.checked) {
-    document.getElementById("basePrice").textContent = "16";
+const prieBanner = document.getElementById("prieBanner");
+
+function panCakeOption() {
+  let totalprice;
+
+  // rado button action 
+  if (cakeOption1.checked) {
+    totalprice = 15;
+  } else if (cakeOption2.checked) {
+    totalprice = 16;
   } else {
-    document.getElementById("basePrice").textContent = "17";
+    totalprice = 17;
   }
+  console.log(totalprice);
+
+  totalprice += Number(sugerType.value);
+  console.log(totalprice);
+
+  prieBanner.innerText = totalprice;
+
+  
 }
 
-cakeOprion1.addEventListener("change", panCakeOprion);
-cakeOprion2.addEventListener("change", panCakeOprion);
-cakeOprion3.addEventListener("change", panCakeOprion);
 
-//  coding for additional options dropdown
+// calling all action 
+cakeOption1.addEventListener("change", panCakeOption);
+cakeOption2.addEventListener("change", panCakeOption);
+cakeOption3.addEventListener("change", panCakeOption);
+sugerType.addEventListener("change", panCakeOption);
 
-const sugerType = document.getElementById("SugerType");
 
-function sugerSelect() {
-  let basePrice = Number(document.getElementById("basePrice").textContent);
-
-  if (
-    sugerType.value === "granulatedSugar" &&
-    basePrice >= 15 &&
-    basePrice <= 17
-  ) {
-    document.getElementById("basePrice").textContent = basePrice + 2;
-  } else if (
-    sugerType.value === "brownSugar" &&
-    basePrice >= 15 &&
-    basePrice <= 17
-  ) {
-    document.getElementById("basePrice").textContent = basePrice + 1;
-  } else if (
-    sugerType.value === "powderedSugar" &&
-    basePrice >= 15 &&
-    basePrice <= 17
-  ) {
-    document.getElementById("basePrice").textContent = basePrice + 1;
-  } else {
-    alert("You have not select base cake option");
-  }
-}
-
-sugerType.addEventListener("change", sugerSelect);
