@@ -17,7 +17,9 @@ function uploadName() {
 
 function addName() {
   animalList.innerHTML = "";
-  addAnimalNames.push(newAnimalName.value);
+  let formatedWord =
+    newAnimalName.value.charAt(0).toUpperCase() + newAnimalName.value.slice(1);
+  addAnimalNames.push(formatedWord);
   addAnimalNames.forEach((animalName) => {
     const animalEliment = document.createElement("li");
     animalEliment.innerText = animalName;
@@ -33,4 +35,5 @@ function sortAnimal() {
 
 document.addEventListener("DOMContentLoaded", uploadName);
 addAnimalBtn.addEventListener("click", addName);
+addAnimalBtn.addEventListener("click", inputFormate);
 sortAnimalsBtn.addEventListener("click", sortAnimal);
