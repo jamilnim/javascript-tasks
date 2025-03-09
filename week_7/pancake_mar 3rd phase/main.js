@@ -6,14 +6,13 @@ const totalPriceBanner = document.querySelector("#totalPrice");
 const pancakeForm = document.querySelector("#pancakeForm");
 const customerName = document.getElementById("customerName");
 const summaryText = document.getElementById("summaryText");
-const orderId = Date.now();
+
 const orderIdDesplay = document.getElementById("orderID");
 const seeOrderBtn = document.querySelector("#seeOrder");
+const allOrders = [];
+const saveBtn = document.querySelector("#saveBtn");
 
 const changeHandler = (event) => {
-  // Oder id add
-  orderIdDesplay.textContent = orderId;
-
   // base price selection with drop down
   const basePrice = parseFloat(
     document.getElementById("type").selectedOptions[0].dataset.price
@@ -47,7 +46,7 @@ const changeHandler = (event) => {
 };
 
 const ordersObject = {
-  customrName: "",
+  customerName: "",
   orderID: "",
   PancakeType: "",
   toppings: [],
@@ -57,9 +56,11 @@ const ordersObject = {
   status: "",
 };
 
+// Function to generate order summary with button click
 function orderSummary() {
-  ordersObject.customrName = customerName.value;
-  ordersObject.orderID = orderId;
+  const orderID = 0;
+  ordersObject.customerName = customerName.value;
+  ordersObject.orderID = Date.now();
   ordersObject.PancakeType = pancakeType.value;
   ordersObject.toppings = [];
   const toppingsChecked = document.querySelectorAll(".topping:checked");
@@ -75,10 +76,32 @@ function orderSummary() {
 
   ordersObject.TotalPrice = totalPriceDisplay.textContent;
 
-  summaryText.innerHTML = `Customer name:${ordersObject.customrName} <br> Order ID:${ordersObject.orderID} <br> Pancake Type: ${ordersObject.PancakeType} <br>Toppings: ${ordersObject.toppings} <br>Extras: ${ordersObject.extras} <br>Mood of Delivery: ${ordersObject.deliveryMethod} <br>Total Price: ${ordersObject.TotalPrice} <br>Status: ${ordersObject.status}`;
+  summaryText.innerHTML = `Customer name:${ordersObject.customerName} <br> Order ID:${ordersObject.orderID} <br> Pancake Type: ${ordersObject.PancakeType} <br>Toppings: ${ordersObject.toppings} <br>Extras: ${ordersObject.extras} <br>Mood of Delivery: ${ordersObject.deliveryMethod} <br>Total Price: ${ordersObject.TotalPrice} <br>Status: ${ordersObject.status}`;
+}
 
+function saveorders() {
+  if (ordersObject.customerName !== "") {
+    allOrders.push({ ...ordersObject });
+    console.log(allOrders);
+    document.getElementById("pancakeForm").reset();
 
+    //  clean the existing object
+
+    ordersObject.customerName = "";
+    ordersObject.orderID = "";
+    ordersObject.PancakeType = "";
+    ordersObject.toppings = [];
+    ordersObject.extras = [];
+    ordersObject.deliveryMethod = "";
+    ordersObject.TotalPrice = "";
+    ordersObject.status = "";
+
+    localStorage.setItem("allOrders", JSON.stringify(allOrders));
+  } else {
+    alert("No order");
+  }
 }
 
 pancakeForm.addEventListener("change", changeHandler);
 seeOrderBtn.addEventListener("click", orderSummary);
+saveBtn.addEventListener("click", saveorders);

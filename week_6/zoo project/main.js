@@ -1,3 +1,4 @@
+//  global veriable 
 const animalList = document.getElementById("animalList");
 const searchAnimal = document.getElementById("searchAnimal");
 const newAnimalName = document.getElementById("newAnimalName");
@@ -37,6 +38,8 @@ function sortAnimal() {
   addAnimalNames.sort();
   uploadName();
 }
+
+//  all tragger 
 
 document.addEventListener("DOMContentLoaded", uploadName);
 addAnimalBtn.addEventListener("click", addName);
