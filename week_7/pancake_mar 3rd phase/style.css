@@ -31,7 +31,10 @@ body {
   flex: 1;
   padding: 50px;
   min-height: 100vh;
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  /* display: flex;
+  justify-content: right;
+  justify-content: space-between; */
 }
 
 .price-banner {

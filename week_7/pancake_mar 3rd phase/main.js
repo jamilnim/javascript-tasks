@@ -94,7 +94,7 @@ function saveorders() {
     ordersObject.extras = [];
     ordersObject.deliveryMethod = "";
     ordersObject.TotalPrice = "";
-    ordersObject.status = "";
+    ordersObject.status = null;
 
     localStorage.setItem("allOrders", JSON.stringify(allOrders));
   } else {
