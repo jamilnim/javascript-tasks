@@ -75,9 +75,12 @@ function orderSummary() {
   ordersObject.deliveryMethod = deliveryMood.value;
 
   ordersObject.TotalPrice = totalPriceDisplay.textContent;
+  ordersObject.status = "waiting";
 
   summaryText.innerHTML = `Customer name:${ordersObject.customerName} <br> Order ID:${ordersObject.orderID} <br> Pancake Type: ${ordersObject.PancakeType} <br>Toppings: ${ordersObject.toppings} <br>Extras: ${ordersObject.extras} <br>Mood of Delivery: ${ordersObject.deliveryMethod} <br>Total Price: ${ordersObject.TotalPrice} <br>Status: ${ordersObject.status}`;
 }
+
+console.log("All Orders: ", allOrders);
 
 function saveorders() {
   if (ordersObject.customerName !== "") {
@@ -94,7 +97,7 @@ function saveorders() {
     ordersObject.extras = [];
     ordersObject.deliveryMethod = "";
     ordersObject.TotalPrice = "";
-    ordersObject.status = null;
+    ordersObject.status = "waiting";
 
     localStorage.setItem("allOrders", JSON.stringify(allOrders));
   } else {

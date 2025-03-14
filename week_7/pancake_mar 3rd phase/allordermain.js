@@ -1,5 +1,11 @@
 // recover arry from local drive
-const allordersretrive = JSON.parse(localStorage.getItem("allOrders"));
+let allordersretrive;
+function getAllOrders() {
+  allordersretrive = JSON.parse(localStorage.getItem("allOrders"));
+}
+getAllOrders();
+// const allordersretrive = JSON.parse(localStorage.getItem("allOrders"));
+console.log("All Orders : ", allordersretrive);
 
 const orderList = document.querySelector("#orderList");
 const searchInput = document.querySelector("#searchInput");
@@ -8,37 +14,53 @@ const searchInput = document.querySelector("#searchInput");
 
 function displayOrders(allorders) {
   orderList.innerHTML = "";
-  for (const order of allorders) {
+  allorders.forEach((order, index) => {
     const li = document.createElement("li");
-    li.innerHTML = `Customer name: ${order.customerName} <br> Order ID:${order.orderID}<br> Pan Cake type: ${order.PancakeType}<br>toppings: ${order.toppings} <br> Extras: ${order.extras} <br> Delivery Method: ${order.deliveryMethod} <br> TotalPrice: ${order.TotalPrice} <br> status: ${order.status} <br>
-    <select id='statusOption'><option value='delivered'>delivered</opiton><option value='waiting'>Waiting</opiton><option value='ready'>Ready</opiton>
+    li.innerHTML = `Customer name: ${order.customerName} <br> Order ID:${
+      order.orderID
+    }<br> Pan Cake type: ${order.PancakeType}<br>toppings: ${
+      order.toppings
+    } <br> Extras: ${order.extras} <br> Delivery Method: ${
+      order.deliveryMethod
+    } <br> TotalPrice: ${order.TotalPrice} <br> status: ${order.status} <br>
+
+
+    <select class='statusOption' value=${
+      order.status
+    } placeholder="Select status"><option value='delivered'>${
+      order.status || "Select status"
+    }</opiton><option value='delivered'>delivered</opiton><option value='waiting'>Waiting</opiton><option value='ready'>Ready</option>
     </select>`;
 
     orderList.appendChild(li);
-  }
+
+    const statusOptionsDropdown = li.querySelector(".statusOption");
+
+    statusOptionsDropdown.addEventListener("change", function () {
+      selectOrderStatus(index, this.value);
+
+      if ((order.status = "ready")) {
+      }
+    });
+  });
 }
 
-function selectingStatus() {
-  allordersretrive.forEach((order) => {
-    document.getElementById("statusOption").selectedOptions[0].value =
-      order.status;
-  });
-  console.log(order.status);
+function selectOrderStatus(index, orderStatus) {
+  allordersretrive[index].status = orderStatus;
+  localStorage.setItem("allOrders", JSON.stringify(allordersretrive));
+  getAllOrders();
   displayOrders(allordersretrive);
-  statusOption();
 }
 
 // search function
 function seachOrder() {
   const searchorderbyName = searchInput.value.toLowerCase();
+
   const filterOrder = allordersretrive.filter((order) =>
     order.customerName.toLowerCase().includes(searchorderbyName)
   );
+  displayOrders(filterOrder);
 }
 
 displayOrders(allordersretrive);
 searchInput.addEventListener("input", seachOrder);
-
-document
-  .getElementById("statusOption")
-  .addEventListener("change", selectingStatus);

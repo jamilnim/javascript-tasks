@@ -5,9 +5,22 @@ Add a button in HTML. When clicked, toggle the theme between light and dark, upd
 
 // Your code here
 
-const them ={
-name:dark,
-isActive:true
+const moodChangeBtn = document.querySelector("#moodChange");
 
+class Theme {
+  constructor(name, isActive) {
+    this.name = name;
+    this.isActive = isActive;
+  }
+  changeThem() {
+    document.body.classList.toggle(this.name);
+    if (this.name === "dark") {
+      this.isActive = true;
+    } else {
+      this.isActive = false;
+    }
+  }
 }
-
+const nowTheme = new Theme("dark", true);
+moodChangeBtn.addEventListener("click", () => nowTheme.changeThem());
+console.log(nowTheme);
