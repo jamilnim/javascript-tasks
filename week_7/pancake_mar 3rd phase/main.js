@@ -9,7 +9,7 @@ const summaryText = document.getElementById("summaryText");
 
 const orderIdDesplay = document.getElementById("orderID");
 const seeOrderBtn = document.querySelector("#seeOrder");
-const allOrders = [];
+const allOrders = JSON.parse(localStorage.getItem("allOrders"));
 const saveBtn = document.querySelector("#saveBtn");
 
 const changeHandler = (event) => {
@@ -58,29 +58,35 @@ const ordersObject = {
 
 // Function to generate order summary with button click
 function orderSummary() {
-  const orderID = 0;
-  ordersObject.customerName = customerName.value;
-  ordersObject.orderID = Date.now();
-  ordersObject.PancakeType = pancakeType.value;
-  ordersObject.toppings = [];
-  const toppingsChecked = document.querySelectorAll(".topping:checked");
-  toppingsChecked.forEach((topping) =>
-    ordersObject.toppings.push(topping.value)
-  );
-  ordersObject.extras = [];
-  const extrasChecked = document.querySelectorAll(".extra:checked");
-  extrasChecked.forEach((extra) => ordersObject.extras.push(extra.value));
+  if (customerName.value !== "") {
+    const orderID = 0;
+    ordersObject.customerName = customerName.value;
+    ordersObject.orderID = Date.now();
+    ordersObject.PancakeType = pancakeType.value;
+    ordersObject.toppings = [];
+    const toppingsChecked = document.querySelectorAll(".topping:checked");
+    toppingsChecked.forEach((topping) =>
+      ordersObject.toppings.push(topping.value)
+    );
+    ordersObject.extras = [];
+    const extrasChecked = document.querySelectorAll(".extra:checked");
+    extrasChecked.forEach((extra) => ordersObject.extras.push(extra.value));
 
-  const deliveryMood = document.querySelector(".delivery:checked");
-  ordersObject.deliveryMethod = deliveryMood.value;
+    const deliveryMood = document.querySelector(".delivery:checked");
+    ordersObject.deliveryMethod = deliveryMood.value;
 
-  ordersObject.TotalPrice = totalPriceDisplay.textContent;
-  ordersObject.status = "waiting";
+    ordersObject.TotalPrice = totalPriceDisplay.textContent;
+    ordersObject.status = "waiting";
 
-  summaryText.innerHTML = `Customer name:${ordersObject.customerName} <br> Order ID:${ordersObject.orderID} <br> Pancake Type: ${ordersObject.PancakeType} <br>Toppings: ${ordersObject.toppings} <br>Extras: ${ordersObject.extras} <br>Mood of Delivery: ${ordersObject.deliveryMethod} <br>Total Price: ${ordersObject.TotalPrice} <br>Status: ${ordersObject.status}`;
+    summaryText.innerHTML = `Customer name:${ordersObject.customerName} <br> Order ID:${ordersObject.orderID} <br> Pancake Type: ${ordersObject.PancakeType} <br>Toppings: ${ordersObject.toppings} <br>Extras: ${ordersObject.extras} <br>Mood of Delivery: ${ordersObject.deliveryMethod} <br>Total Price: ${ordersObject.TotalPrice} <br>Status: ${ordersObject.status}`;
+  } else {
+    alert("Please input order");
+  }
 }
 
 console.log("All Orders: ", allOrders);
+
+// save order function and form reset 
 
 function saveorders() {
   if (ordersObject.customerName !== "") {
@@ -99,9 +105,12 @@ function saveorders() {
     ordersObject.TotalPrice = "";
     ordersObject.status = "waiting";
 
+    summaryText.textContent = "Please input new order";
+    alert('Your order is confirmed')
+
     localStorage.setItem("allOrders", JSON.stringify(allOrders));
   } else {
-    alert("No order");
+    alert("No order to save");
   }
 }
 

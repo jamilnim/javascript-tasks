@@ -8,13 +8,41 @@
   </head>
   <body>
     <!--  add order list  -->
+      <div class="manubar">
     <div class="header">
+      <a href="http://127.0.0.1:5500/JS/week_7/pancake_mar%203rd%20phase/index.html">
+       
+      <div class="backIcon"><H2>←</H2></div></a>
+      <img class="logo" src="./image/Jaamy (2).png" alt="Logo">
       <h1>Order list</h1>
+
+      <div class="manuItem">
+        <label for=""
+          >Search by customer name:
+          <input id="searchInput" type="text" placeholder="Search order" />
+        </label>
+        <div>
+     <label for="">Filter by Order Status:
+        <select id="searchByStatus" aria-placeholder="Search by status">
+          <option value="all">All orders</option>
+          <option value="waiting">Waiting</option>
+          <option value="ready">Ready</option>
+          <option value="delivered">Delivered</option>
+        </select>
+      </label>
+      </div>
     </div>
-    <div class="header">
-      <input id="searchInput" type="text" placeholder="Search order" />
-    </div>
+  </div>
+</div>
+    <div class="orderDisplay">
     <ul id="orderList"></ul>
+  </div>
+
+   <footer>
+      <div id="counterText">
+
+      </div>
+    </footer>
     <script src="allordermain.js"></script>
   </body>
 </html>
