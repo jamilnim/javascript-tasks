@@ -74,6 +74,7 @@ header {
   box-shadow: 1px 1px 3px gray;
 }
 
+
 input[type="checkbox"] {
   margin-right: 5px;
   width: 1.5rem;
@@ -155,9 +156,22 @@ h3 {
 button {
   width: 8rem;
   height: 2rem;
+  background-color: bisque;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+button:active {
+  width: 8rem;
+  height: 2rem;
   background-color: beige;
   margin-left: 1rem;
+  
+  transform: scale(0.95);
+
 }
+
+
 
 .allBtncontainer {
   display: flex;

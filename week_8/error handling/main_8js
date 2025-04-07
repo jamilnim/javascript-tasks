@@ -1,0 +1,22 @@
+/* Task 8: Fetch API Error Handling
+/*
+Task: Use `fetch()` to get data, handle errors properly.
+
+Test cases:
+fetchData("https://jsonplaceholder.typicode.com/users"); // Should log API data
+fetchData("invalid-url"); // Should log network error
+*/
+
+async function fetchData(url) {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log("Network error");
+    }
+  }
+
+
+console.log(fetchData("https://jsonplaceholder.typicode.com/users"));
+console.log(fetchData("invalid-url"));

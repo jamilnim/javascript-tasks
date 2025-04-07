@@ -3,8 +3,8 @@ Should return "Hello, [name]!".
 If no name is provided, return "Hello, guest!".  
 */
 
-function greet(name) {
-    return ("Hello, " + name,'!');
+function greet(name='Gust') {
+    return (`Hello ${name}!`);
 }
 
 // Debug & Test

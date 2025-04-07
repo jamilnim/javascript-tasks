@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap");
 
-*{
-    font-family: "Roboto Condensed", sans-serif;
-    margin: 0;
-    padding: 0;
+* {
+  font-family: "Roboto Condensed", sans-serif;
+
+  margin: 0;
+  padding: 0;
 }
 .manubar {
   box-sizing: border-box;
@@ -11,7 +12,7 @@
   height: 5rem;
   background-color: bisque;
   box-shadow: 1px 1px 3px gray;
- 
+
   margin-top: 0;
 }
 
@@ -26,18 +27,18 @@
 h1 {
   margin-right: 14rem;
   margin-left: 2rem;
+  font-size: 2em;
 }
 
-h2{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: xx-large;
+h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: xx-large;
 }
 
-.logo{
-width: 4.5rem;
-height: 4.5rem;
-margin-left: 30rem;
-
+.logo {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-left: 30rem;
 }
 .manuItem {
   box-sizing: border-box;
@@ -56,8 +57,14 @@ margin-left: 30rem;
 #searchByStatus {
   width: 14rem;
   height: 1.5rem;
+
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
 }
 
+#searchByStatus.open {
+  max-height: 300px;
+}
 
 #orderList {
   box-sizing: border-box;
@@ -66,7 +73,7 @@ margin-left: 30rem;
   list-style-type: none;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 li {
@@ -76,7 +83,19 @@ li {
   width: 14rem;
   height: auto;
   border-radius: 10px;
-  margin: .5rem;
+  margin: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+li:hover {
+  box-sizing: border-box;
+  border: 2px solid rgb(74, 73, 73);
+  padding: 5px;
+  width: 14rem;
+  height: auto;
+  border-radius: 10px;
+  margin: 0.5rem;
+  transform: scale(1.1);
 }
 
 .blue {
@@ -91,37 +110,57 @@ li {
   background-color: rgb(114, 188, 73);
 }
 
-.backIcon{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: burlywood;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: .25rem solid rgb(253, 252, 252);
-    padding-bottom: .40rem;
-    box-shadow: 1px 1px 3px gray;
+.backIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.25rem solid rgb(253, 252, 252);
+  padding-bottom: 0.4rem;
+  box-shadow: 1px 1px 3px gray;
+  transition: background-color 0.3s ease-in-out;
+  transition: all 0.5s ease;
 }
 
-a{
-    text-decoration: none;
+.backIcon:hover {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgb(123, 89, 46);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.25rem solid rgb(253, 252, 252);
+  padding-bottom: 0.4rem;
+  box-shadow: 1px 1px 3px gray;
+  color: aliceblue;
+  transform: scale(1.1);
 }
 
-.statusOption{
-    width: 13rem;
-    background-color: transparent;
-
+a {
+  text-decoration: none;
 }
 
-footer{
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    height: 6rem;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: xx-large;
+.statusOption {
+  width: 13rem;
+  background-color: transparent;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 6rem;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+}
+
+label{
+  font-size: 1em;
 }

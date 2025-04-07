@@ -16,13 +16,15 @@ function displayOrders(allorders) {
   orderList.innerHTML = "";
   allorders.forEach((order, index) => {
     const li = document.createElement("li");
-    li.innerHTML = `Customer name: ${order.customerName} <br> Order ID:${
-      order.orderID
-    }<br> Pan Cake type: ${order.PancakeType}<br>Toppings: ${
-      order.toppings
-    } <br> Extras: ${order.extras} <br> Delivery Method: ${
-      order.deliveryMethod
-    } <br> TotalPrice: ${order.TotalPrice} <br> Status: ${order.status} <br>
+    li.innerHTML = `<button data-index=${index} id="cancelBtn">X</button><br>Customer name: ${
+      order.customerName
+    } <br> Order ID:${order.orderID}<br> Pan Cake type: ${
+      order.PancakeType
+    }<br>Toppings: ${order.toppings} <br> Extras: ${
+      order.extras
+    } <br> Delivery Method: ${order.deliveryMethod} <br> TotalPrice: ${
+      order.TotalPrice
+    } <br> Status: ${order.status} <br>
 
 
     <select class='statusOption' value=${
@@ -48,6 +50,12 @@ function displayOrders(allorders) {
 
     statusOptionsDropdown.addEventListener("change", function () {
       selectOrderStatus(index, this.value);
+
+      // delet function
+
+      cancelBtn.addEventListener("click", () => deletOrder(index));
+
+      // ------------------------------------------------
 
       localStorage.setItem("allOrders", JSON.stringify(allordersretrive));
       getAllOrders();
@@ -115,6 +123,10 @@ function countUrder() {
   counterText.textContent = `Waiting: ${totalWaiting} Ready:${totalReady} Delivered ${totaldelivered} Total Order ${totalOrder}`;
 }
 
+// function deletOrder(index) {
+//   const index = this.dataset;
+//   allordersretrive.splice(index, 1);
+// }
 countUrder();
 
 displayOrders(allordersretrive);
